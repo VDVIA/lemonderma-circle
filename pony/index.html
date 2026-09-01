@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Quote the PONY Review — Lemonderma Circle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;1,500&family=Karla:wght@400;500;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root{
+    --lemon:#E6EE7A; --lemon-d:#C6D145; --olive:#4B612D;
+    --cream:#FEFCD0; --bg:#FFFEF6; --card:#FFFFFF;
+    --ink:#16160F; --ink2:#33332A; --mut:#7C7A63;
+    --line:#E8E7C8; --line2:#D3D2AC;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --lemon:#DCE86A; --lemon-d:#9FAE33; --olive:#B9CE84;
+      --cream:#1E1F12; --bg:#111209; --card:#1A1B11;
+      --ink:#F4F3E2; --ink2:#DBDAC6; --mut:#918F76;
+      --line:#2C2E1D; --line2:#43462C;
+    }
+  }
+  :root[data-theme="dark"]{
+    --lemon:#DCE86A; --lemon-d:#9FAE33; --olive:#B9CE84;
+    --cream:#1E1F12; --bg:#111209; --card:#1A1B11;
+    --ink:#F4F3E2; --ink2:#DBDAC6; --mut:#918F76;
+    --line:#2C2E1D; --line2:#43462C;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink2);
+    font-family:Karla,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:18.5px; line-height:1.66; -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 6vw 88px}
+  h1,h2,h3{color:var(--ink);text-wrap:balance;margin:0}
+  h1{font-family:"EB Garamond",Georgia,serif;font-weight:600;font-size:clamp(40px,9vw,58px);line-height:1.06;letter-spacing:-.012em}
+  h2{font-family:"EB Garamond",Georgia,serif;font-weight:600;font-size:clamp(28px,6vw,36px);line-height:1.18;margin:0 0 12px}
+  h3{font-size:20px;font-weight:800;letter-spacing:-.01em}
+  h4{margin:0 0 4px;font-size:18px;font-weight:800;color:var(--ink)}
+  p{margin:0 0 15px}
+  .eyebrow{
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12.5px; font-weight:600;
+    letter-spacing:.16em; text-transform:uppercase; color:var(--olive); margin:0 0 14px;
+  }
+
+  /* hero */
+  .hero{background:linear-gradient(180deg,var(--cream),var(--bg) 90%);border-bottom:1px solid var(--line);margin-bottom:46px}
+  .hero-in{max-width:720px;margin:0 auto;padding:52px 6vw 46px;display:grid;gap:36px;grid-template-columns:1fr;align-items:start}
+  @media(min-width:700px){.hero-in{grid-template-columns:1fr 272px;gap:42px}}
+  .lede{font-size:20.5px;line-height:1.6;color:var(--ink2);margin:18px 0 0}
+  .lede b{color:var(--ink);font-weight:800}
+  mark{background:var(--lemon);color:#16160F;padding:.06em .22em;border-radius:2px}
+
+  .ig{border:1px solid var(--line2);border-radius:18px;overflow:hidden;background:var(--card);
+       box-shadow:0 16px 36px -18px rgba(30,34,10,.45)}
+  .ig-h{display:flex;align-items:center;gap:10px;padding:11px 14px;color:var(--ink);
+        text-decoration:none;background:var(--card)}
+  .ig-h:hover .ig-u{text-decoration:underline}
+  .ig-av{width:34px;height:34px;border-radius:50%;background:var(--lemon);color:#16160F;
+         display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex:none}
+  .ig-u{font-weight:800;font-size:15.5px;line-height:1.15}
+  .ig-u small{display:block;font-weight:500;font-size:12px;color:var(--mut)}
+  .ig-glyph{margin-left:auto;color:var(--mut);display:flex}
+  .ig video{display:block;width:100%;height:auto;background:#000}
+  .btns{display:grid;gap:9px;margin-top:12px}
+  .btn{display:flex;align-items:center;justify-content:center;gap:9px;padding:13px 16px;border-radius:12px;
+       font-weight:800;font-size:16px;text-decoration:none;letter-spacing:-.01em}
+  .btn.pri{background:var(--lemon);color:#16160F;border:1px solid var(--lemon-d)}
+  .btn.sec{background:var(--card);color:var(--ink);border:1.5px solid var(--line2)}
+  .btn:hover{filter:brightness(.97)}
+  .btn:focus-visible{outline:3px solid var(--olive);outline-offset:2px}
+  .btn-sub{font-size:13px;color:var(--mut);text-align:center;margin:7px 0 0;line-height:1.45}
+
+  section{margin:0 0 46px}
+  .rule{height:1px;background:var(--line);border:0;margin:0 0 46px}
+
+  /* steps */
+  .step{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:24px;margin:0 0 16px}
+  .step.fixed{border-left:5px solid var(--lemon-d)}
+  .step.free{border-left:5px solid var(--line2)}
+  .step-h{display:flex;align-items:baseline;gap:12px;margin:0 0 14px;flex-wrap:wrap}
+  .step-n{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;color:var(--olive);
+          letter-spacing:.1em;white-space:nowrap}
+  .tag{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.1em;
+       text-transform:uppercase;padding:3px 10px;border-radius:20px;white-space:nowrap}
+  .tag.lock{background:var(--lemon);color:#16160F}
+  .tag.open{background:transparent;color:var(--mut);border:1px solid var(--line2)}
+  .say{font-family:"EB Garamond",Georgia,serif;font-size:25px;line-height:1.32;color:var(--ink);
+       font-style:italic;border-left:3px solid var(--lemon-d);padding:2px 0 2px 17px;margin:0 0 13px}
+
+  ol.hooks{list-style:none;margin:0;padding:0;display:grid;gap:17px}
+  ol.hooks li{display:flex;gap:14px;align-items:flex-start}
+  .hk-n{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;color:var(--olive);
+        border:1.5px solid var(--line2);border-radius:50%;width:28px;height:28px;flex:none;
+        display:flex;align-items:center;justify-content:center;margin-top:2px}
+  ol.hooks p{margin:0;font-size:16.5px;color:var(--ink2)}
+
+  .refs{display:flex;gap:14px;overflow-x:auto;padding:2px 2px 12px;scroll-snap-type:x mandatory}
+  .ref{flex:none;width:184px;scroll-snap-align:start}
+  .ref video{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line2);background:#000}
+  .ref span{display:block;font-size:13.5px;color:var(--mut);margin-top:7px;line-height:1.4}
+
+  .callout{background:var(--cream);border:1px solid var(--line2);border-radius:16px;padding:22px 24px}
+  .callout p:last-child{margin-bottom:0}
+  code{font-family:"IBM Plex Mono",monospace;font-size:14.5px;background:var(--cream);
+       border:1px solid var(--line2);border-radius:6px;padding:4px 9px;display:inline-block;
+       margin:0 6px 7px 0;color:var(--ink)}
+  .mention{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--ink);font-size:17px}
+</style>
+</head>
+<body>
+
+<div class="hero"><div class="hero-in">
+  <div>
+    <p class="eyebrow">Lemonderma Circle · Campaign Brief</p>
+    <h1>PONY just reviewed Lemonderma.</h1>
+    <p class="lede">PONY — the <b>27M-follower</b> makeup artist behind <b>BLACKPINK's Jisoo</b> — just posted
+      a full review of the exact serum and cream heading your way.<br><br>
+      We'd love your next video to <mark>start by quoting hers</mark>.</p>
+  </div>
+  <div>
+    <div class="ig">
+      <a class="ig-h" href="https://www.instagram.com/reel/Dcs0YHmtunS/" target="_blank" rel="noopener">
+        <span class="ig-av">P</span>
+        <span class="ig-u">ponysmakeup<small>Instagram · Reel</small></span>
+        <span class="ig-glyph"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.6" cy="6.4" r="1.15" fill="currentColor" stroke="none"/></svg></span>
+      </a>
+      <video controls playsinline preload="metadata" src="assets/pony-review.mp4"></video>
+    </div>
+    <div class="btns">
+      <a class="btn pri" href="https://www.instagram.com/reel/Dcs0YHmtunS/" target="_blank" rel="noopener">View her post on Instagram</a>
+      <a class="btn sec" href="https://drive.google.com/drive/folders/1mBZSrIB2t5ry8Mj38beFUqBE5AoAyTVJ?usp=sharing" target="_blank" rel="noopener">⬇ Download the video</a>
+    </div>
+    <p class="btn-sub">Grab the original file from the folder and use it freely in your edit.</p>
+  </div>
+</div></div>
+
+<div class="wrap">
+
+  <section>
+    <h2>Why now</h2>
+    <p>A celebrity moment fades in days — <b>the views go to the creators who quote it early.</b></p>
+    <p>Georgina × Cathy Doll. Kylie × Medicube — 108M views on one video. Cardi B's K-beauty picks selling
+      out overnight. Same pattern every time, and this is your wave to catch.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <p class="eyebrow">The structure</p>
+    <h2>Open fixed, middle yours, close fixed</h2>
+    <p>Only the first and last beats are locked. Everything between them is yours.</p>
+
+    <div class="step fixed">
+      <div class="step-h"><span class="step-n">STEP 01</span><span class="tag lock">Keep as-is</span>
+        <h3>Open on PONY</h3></div>
+      <p>Put her video on screen and lead with the line:</p>
+      <p class="say">"The makeup artist behind BLACKPINK's Jisoo recommends this skincare."</p>
+      <p style="margin:0">Quote it however you like — stitch, screen-in-screen, react.</p>
+    </div>
+
+    <div class="step free">
+      <div class="step-h"><span class="step-n">STEP 02</span><span class="tag open">Pick 4 or more</span>
+        <h3>Your middle</h3></div>
+      <ol class="hooks">
+        <li><div class="hk-n">1</div><div><h4>The first-touch reaction</h4><p>The serum tingles slightly going on — that's the actives waking up. Then the cream lands light and calm. Showing that contrast on camera is the single most repeatable moment in this product.</p></div></li>
+        <li><div class="hk-n">2</div><div><h4>Where it comes from</h4><p>Lemonderma is made by a lab that supplies dermatology clinics in 50+ countries. The lemon-derived exosomes are the pedigree — proof of who makes this.</p></div></li>
+        <li><div class="hk-n">3</div><div><h4>Before &amp; after</h4><p>Show a real, visible change in your skin over a few days — your honest result, on camera.</p></div></li>
+        <li><div class="hk-n">4</div><div><h4>Korean pharmacy-only, and sold out</h4><p>Sold exclusively through pharmacies in Korea, registered for Brightening and Anti-Wrinkle care. It sold out within a month of launch and still isn't back in Korea.</p></div></li>
+        <li><div class="hk-n">5</div><div><h4>Makeup sits better</h4><p>PONY is a makeup artist — the most on-brand angle is what your base looks like over this skin. Glass-skin glow, foundation gripping evenly.</p></div></li>
+        <li><div class="hk-n">6</div><div><h4>Amazon's Choice, twice</h4><p>Both the serum and the cream earned Amazon's Choice within a month of the US launch.</p></div></li>
+      </ol>
+    </div>
+
+    <div class="step fixed">
+      <div class="step-h"><span class="step-n">STEP 03</span><span class="tag lock">Keep as-is</span>
+        <h3>Close on the promo</h3></div>
+      <p>End by telling people the offer is live right now:</p>
+      <p class="say">"There's a PONY special running — buy 2, get 1 free."</p>
+      <p>Then <b>tag both accounts and invite both as collaborators</b> on the post, so it lands on our
+        grids too and we can put ad budget behind it:</p>
+      <p style="margin:0 0 14px"><span class="mention">@lemonderma_official</span> &nbsp;
+         <span class="mention">@lemonderma.circle</span></p>
+      <div><code>#lemonderma</code><code>#ponyskincare</code><code>#lemonshot</code><code>#exosomeskincare</code><code>#kpharmacy</code></div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <p class="eyebrow">Reference</p>
+    <h2>What quote-style looks like</h2>
+    <div class="refs">
+      <div class="ref"><video controls playsinline preload="metadata" src="assets/ref-georgina-1.mp4"></video>
+        <span>Georgina × Cathy Doll — quote 1</span></div>
+      <div class="ref"><video controls playsinline preload="metadata" src="assets/ref-georgina-2.mp4"></video>
+        <span>Georgina × Cathy Doll — quote 2</span></div>
+      <div class="ref"><video controls playsinline preload="metadata" src="assets/ref-medicube.mp4"></video>
+        <span>Medicube — Khloé quote</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="callout">
+      <h3 style="margin-bottom:9px">When you post</h3>
+      <p>Send us the link and we'll put our own ad budget behind it — your video, boosted on your handle.</p>
+      <p style="margin:0">Want a second opinion on your edit before posting? Just DM us.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
