@@ -12,7 +12,7 @@
   :root{
     --lemon:#E6EE7A; --lemon-d:#C6D145; --olive:#4B612D;
     --cream:#FEFCD0; --bg:#FFFEF6; --card:#FFFFFF;
-    --ink:#16160F; --ink2:#33332A; --mut:#7C7A63;
+    --ink:#16160F; --ink2:#33332A; --mut:#6B6952;
     --line:#E8E7C8; --line2:#D3D2AC;
     color-scheme:light;
   }
@@ -20,41 +20,43 @@
     :root:not([data-theme="light"]){
       --lemon:#DCE86A; --lemon-d:#9FAE33; --olive:#B9CE84;
       --cream:#1E1F12; --bg:#111209; --card:#1A1B11;
-      --ink:#F4F3E2; --ink2:#DBDAC6; --mut:#918F76;
+      --ink:#F4F3E2; --ink2:#DBDAC6; --mut:#A6A48A;
       --line:#2C2E1D; --line2:#43462C;
     }
   }
   :root[data-theme="dark"]{
     --lemon:#DCE86A; --lemon-d:#9FAE33; --olive:#B9CE84;
     --cream:#1E1F12; --bg:#111209; --card:#1A1B11;
-    --ink:#F4F3E2; --ink2:#DBDAC6; --mut:#918F76;
+    --ink:#F4F3E2; --ink2:#DBDAC6; --mut:#A6A48A;
     --line:#2C2E1D; --line2:#43462C;
   }
   *{box-sizing:border-box}
   body{
     margin:0; background:var(--bg); color:var(--ink2);
     font-family:Karla,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    font-size:18.5px; line-height:1.62; -webkit-font-smoothing:antialiased;
+    font-size:18px; line-height:1.62; -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
-  .wrap{max-width:720px;margin:0 auto;padding:0 6vw 88px}
+  /* 컨테이너: 패딩을 px로 고정 — 6vw 패딩이 PC에서 본문을 400px로 짓누르던 원인 */
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px 88px}
   h1,h2,h3{color:var(--ink);text-wrap:balance;margin:0}
-  h1{font-family:"EB Garamond",Georgia,serif;font-weight:600;font-size:clamp(36px,8.2vw,54px);line-height:1.08;letter-spacing:-.012em}
-  h2{font-family:"EB Garamond",Georgia,serif;font-weight:600;font-size:clamp(27px,5.8vw,35px);line-height:1.18;margin:0 0 12px}
-  h3{font-size:19px;font-weight:800;letter-spacing:-.01em}
+  h1{font-family:"EB Garamond",Georgia,serif;font-weight:600;font-size:clamp(36px,5.2vw,62px);line-height:1.06;letter-spacing:-.012em}
+  h2{font-family:"EB Garamond",Georgia,serif;font-weight:600;font-size:clamp(27px,3.2vw,38px);line-height:1.18;margin:0 0 14px}
+  h3{font-size:19.5px;font-weight:800;letter-spacing:-.01em}
   p{margin:0 0 14px}
   .eyebrow{
-    font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12.5px; font-weight:600;
-    letter-spacing:.16em; text-transform:uppercase; color:var(--olive); margin:0 0 12px;
+    font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:13.5px; font-weight:600;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--olive); margin:0 0 12px;
   }
   mark{background:var(--lemon);color:#16160F;padding:.06em .22em;border-radius:2px}
   a{color:var(--olive)}
+  .muted{color:var(--mut)}
 
   /* hero */
-  .hero{background:linear-gradient(180deg,var(--cream),var(--bg) 90%);border-bottom:1px solid var(--line);margin-bottom:44px}
-  .hero-in{max-width:720px;margin:0 auto;padding:50px 6vw 44px;display:grid;gap:32px;grid-template-columns:1fr;align-items:start}
-  @media(min-width:700px){.hero-in{grid-template-columns:1fr 260px;gap:42px}}
-  .lede{font-size:20px;line-height:1.58;color:var(--ink2);margin:18px 0 0}
+  .hero{background:linear-gradient(180deg,var(--cream),var(--bg) 90%);border-bottom:1px solid var(--line);margin-bottom:48px}
+  .hero-in{max-width:1040px;margin:0 auto;padding:52px 24px 48px;display:grid;gap:32px;grid-template-columns:1fr;align-items:center}
+  @media(min-width:860px){.hero-in{grid-template-columns:1.35fr 340px;gap:56px;padding:64px 24px 60px}}
+  .lede{font-size:clamp(19px,1.5vw,22px);line-height:1.58;color:var(--ink2);margin:20px 0 0;max-width:34em}
   .lede b{color:var(--ink);font-weight:800}
 
   .ig{border:1px solid var(--line2);border-radius:18px;overflow:hidden;background:var(--card);
@@ -65,82 +67,94 @@
   .ig-av{width:34px;height:34px;border-radius:50%;background:var(--lemon);color:#16160F;
          display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex:none}
   .ig-u{font-weight:800;font-size:15.5px;line-height:1.15}
-  .ig-u small{display:block;font-weight:500;font-size:12px;color:var(--mut)}
+  .ig-u small{display:block;font-weight:500;font-size:12.5px;color:var(--mut)}
   .ig video{display:block;width:100%;height:auto;background:#000}
-  .ig-cap{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;
-          color:var(--mut);text-align:center;margin-top:9px;text-transform:uppercase}
+  .ig-cap{font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.06em;
+          color:var(--mut);text-align:center;margin-top:10px;text-transform:uppercase}
 
-  section{margin:0 0 44px}
-  .rule{height:1px;background:var(--line);border:0;margin:0 0 44px}
+  section{margin:0 0 48px}
+  .rule{height:1px;background:var(--line);border:0;margin:0 0 48px}
+  /* 읽기 폭: 긴 문단은 65자 안팎, 그리드는 컨테이너 전체 */
+  .prose{max-width:720px}
 
-  /* momentum timeline — a real sequence, so the rail carries information */
-  .tl{position:relative;margin:18px 0 0;padding-left:30px}
+  /* momentum: PC에서는 타임라인 + 고정비 반박을 나란히 */
+  .mom{display:grid;gap:36px;grid-template-columns:1fr}
+  @media(min-width:900px){.mom{grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}}
+  .tl{position:relative;margin:18px 0 0;padding-left:32px}
   .tl:before{content:"";position:absolute;left:9px;top:8px;bottom:26px;width:2px;background:var(--line2)}
-  .tl-i{position:relative;padding:0 0 20px}
-  .tl-i:before{content:"";position:absolute;left:-26px;top:7px;width:12px;height:12px;border-radius:50%;
+  .tl-i{position:relative;padding:0 0 22px}
+  .tl-i:before{content:"";position:absolute;left:-28px;top:7px;width:12px;height:12px;border-radius:50%;
                background:var(--card);border:2.5px solid var(--olive)}
   .tl-i.now:before{background:var(--lemon);border-color:var(--lemon-d);box-shadow:0 0 0 5px var(--cream)}
-  .tl-w{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.1em;
-        text-transform:uppercase;color:var(--mut);display:block;margin-bottom:2px}
-  .tl-t{font-size:19px;font-weight:800;color:var(--ink);line-height:1.3}
+  .tl-w{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.1em;
+        text-transform:uppercase;color:var(--mut);display:block;margin-bottom:3px}
+  .tl-t{font-size:20px;font-weight:800;color:var(--ink);line-height:1.3}
   .tl-i.now{background:var(--cream);border:1.5px solid var(--lemon-d);border-radius:14px;
-            padding:14px 16px 14px 16px;margin-left:-4px}
+            padding:14px 16px;margin-left:-4px}
   .tl-i.now .tl-w{color:var(--olive)}
-  .tl-i.now p{margin:6px 0 0;font-size:16.5px}
+  .tl-i.now p{margin:6px 0 0;font-size:17px}
 
-  /* reframe */
-  .why{border-left:4px solid var(--lemon-d);padding:6px 0 6px 18px;margin:0}
-  .why p{font-family:"EB Garamond",Georgia,serif;font-size:clamp(22px,5vw,27px);line-height:1.34;
+  .why{border-left:4px solid var(--lemon-d);padding:8px 0 8px 20px;margin:18px 0 0}
+  .why p{font-family:"EB Garamond",Georgia,serif;font-size:clamp(22px,2.1vw,29px);line-height:1.36;
          color:var(--ink);margin:0;font-weight:500;text-wrap:balance}
   .why b{font-weight:600;background:var(--lemon);color:#16160F;padding:0 .18em;border-radius:2px}
 
-  /* what you get */
-  .get{display:grid;gap:12px;margin:18px 0 0}
-  .g{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:18px 20px;
+  /* what you get: PC 3열 */
+  .get{display:grid;gap:14px;margin:18px 0 0;grid-template-columns:1fr}
+  @media(min-width:900px){.get{grid-template-columns:repeat(3,1fr);gap:18px}}
+  .g{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:20px 22px;
      display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+  @media(min-width:900px){.g{grid-template-columns:1fr;gap:10px}}
   .g.big{border-color:var(--lemon-d);border-width:2px;background:var(--cream)}
-  .g-ic{font-size:26px;line-height:1.1;padding-top:2px;text-align:center}
-  .g h3{margin-bottom:3px}
-  .g p{margin:0;font-size:16.5px}
-  .g .dl{display:inline-block;margin-top:8px;font-size:15px;font-weight:700;color:var(--olive)}
-  .pct{display:flex;align-items:baseline;gap:14px;margin:2px 0 4px}
-  .pct .n{font-family:"EB Garamond",Georgia,serif;font-size:clamp(40px,9vw,54px);line-height:1;color:var(--olive);
+  .g-ic{font-size:28px;line-height:1.1;padding-top:2px}
+  .g h3{margin-bottom:4px}
+  .g p{margin:0;font-size:17px}
+  .g .dl{display:inline-block;margin-top:10px;font-size:15.5px;font-weight:700;color:var(--olive)}
+  .pct{display:flex;align-items:baseline;gap:14px;margin:2px 0 6px;flex-wrap:wrap}
+  .pct .n{font-family:"EB Garamond",Georgia,serif;font-size:clamp(44px,4.2vw,58px);line-height:1;color:var(--olive);
           font-variant-numeric:tabular-nums}
-  .pct .vs{font-size:14.5px;color:var(--mut);line-height:1.3}
-  .pct .vs b{color:var(--ink);font-size:18px}
+  .pct .vs{font-size:15px;color:var(--mut);line-height:1.35}
+  .pct .vs b{color:var(--ink);font-size:19px}
+  .fn{font-size:14px;color:var(--mut)}
 
-  /* brand */
-  .duo{border:1px solid var(--line2);border-radius:18px;overflow:hidden;background:var(--card);margin:0 0 16px}
+  /* brand: PC 2열 (사진 | 팩트) */
+  .brand{display:grid;gap:18px;grid-template-columns:1fr;margin:18px 0 0}
+  @media(min-width:900px){.brand{grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}}
+  .duo{border:1px solid var(--line2);border-radius:18px;overflow:hidden;background:var(--card)}
   .duo img{display:block;width:100%;height:auto}
-  .facts{display:grid;gap:10px;margin:0}
+  .facts{display:grid;gap:12px;margin:0}
   .fact{display:flex;gap:12px;align-items:flex-start}
-  .f-dot{width:8px;height:8px;border-radius:50%;background:var(--lemon-d);flex:none;margin-top:10px}
-  .fact p{margin:0;font-size:17px}
+  .f-dot{width:8px;height:8px;border-radius:50%;background:var(--lemon-d);flex:none;margin-top:11px}
+  .fact p{margin:0;font-size:17.5px}
   .fact b{color:var(--ink)}
   .youget{background:var(--cream);border:1.5px solid var(--lemon-d);border-radius:16px;padding:16px 20px;margin:18px 0 0}
-  .youget p{margin:0;font-size:17px}
+  .youget p{margin:0;font-size:17.5px}
   .youget b{color:var(--ink)}
 
-  /* steps */
-  .step{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:18px 20px;margin:0 0 12px;
+  /* steps: PC 3열 */
+  .steps{display:grid;gap:12px;grid-template-columns:1fr;margin:18px 0 0}
+  @media(min-width:900px){.steps{grid-template-columns:repeat(3,1fr);gap:18px}}
+  .step{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:20px 22px;
         display:flex;gap:14px;align-items:flex-start}
   .s-n{font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600;color:var(--olive);
        border:1.5px solid var(--line2);border-radius:50%;width:32px;height:32px;flex:none;
        display:flex;align-items:center;justify-content:center;margin-top:2px}
-  .step h3{margin-bottom:3px}
-  .step p{margin:0;font-size:16.5px}
+  .step h3{margin-bottom:4px}
+  .step p{margin:0;font-size:17px}
   .promo{background:var(--cream);border:1px solid var(--line2);border-radius:16px;padding:16px 20px;
-         font-size:16.5px;margin:16px 0 0}
+         font-size:17px;margin:18px 0 0}
   .promo b{color:var(--ink)}
 
   /* CTA */
-  .cta{border:2px solid var(--lemon-d);border-radius:18px;background:var(--card);padding:28px 26px;text-align:center}
+  .cta{border:2px solid var(--lemon-d);border-radius:18px;background:var(--card);padding:32px 28px;text-align:center}
   .cta h2{margin-bottom:8px}
-  .cta p{font-size:17px}
-  .cta-pill{display:inline-block;background:var(--lemon);color:#16160F;font-weight:800;font-size:17px;
-            padding:14px 26px;border-radius:12px;margin-top:6px;letter-spacing:-.01em}
-  footer{margin-top:40px;text-align:center;font-size:13px;color:var(--mut)}
+  .cta p{font-size:18px;max-width:34em;margin-left:auto;margin-right:auto}
+  .cta-pill{display:inline-block;background:var(--lemon);color:#16160F;font-weight:800;font-size:17.5px;
+            padding:14px 28px;border-radius:12px;margin-top:8px;letter-spacing:-.01em}
+  .cta .sub{margin-top:14px;font-size:15px;color:var(--mut)}
+  footer{margin-top:44px;text-align:center;font-size:14px;color:var(--mut)}
   footer a{color:var(--mut)}
+  footer .ver{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em;display:block;margin-top:6px;opacity:.75}
 </style>
 </head>
 <body>
@@ -168,25 +182,28 @@
 <div class="wrap">
 
   <section>
-    <p class="eyebrow">What's happening</p>
-    <h2>The wave is already moving.</h2>
-    <div class="tl">
-      <div class="tl-i"><span class="tl-w">Aug 31</span>
-        <div class="tl-t">PONY posts her full review</div></div>
-      <div class="tl-i"><span class="tl-w">Since then</span>
-        <div class="tl-t">Korean pharmacies are sold out</div></div>
-      <div class="tl-i"><span class="tl-w">Mid-September</span>
-        <div class="tl-t">Our US campaign goes live — real budget</div></div>
-      <div class="tl-i now"><span class="tl-w">You · now</span>
-        <div class="tl-t">Post before the ads start</div>
-        <p>The videos already up when the campaign hits are the ones that catch the sales.</p></div>
+    <div class="mom">
+      <div>
+        <p class="eyebrow">What's happening</p>
+        <h2>The wave is already moving.</h2>
+        <div class="tl">
+          <div class="tl-i"><span class="tl-w">Aug 31</span>
+            <div class="tl-t">PONY posts her full review</div></div>
+          <div class="tl-i"><span class="tl-w">Since then</span>
+            <div class="tl-t">Korean pharmacies are sold out</div></div>
+          <div class="tl-i"><span class="tl-w">Mid-September</span>
+            <div class="tl-t">Our US campaign goes live — real budget</div></div>
+          <div class="tl-i now"><span class="tl-w">You · now</span>
+            <div class="tl-t">Post before the ads start</div>
+            <p>The videos already up when the campaign hits are the ones that catch the sales.</p></div>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">Why there's no flat fee</p>
+        <div class="why"><p>A flat fee pays you once for a video nobody pushes. Here you make it,
+          we push it, and you keep <b>30% of everything it sells</b> — for as long as it sells.</p></div>
+      </div>
     </div>
-  </section>
-
-  <section>
-    <p class="eyebrow">Why there's no flat fee</p>
-    <div class="why"><p>A flat fee pays you once for a video nobody pushes. Here you make it,
-      we push it, and you keep <b>30% of everything it sells</b> — for as long as it sells.</p></div>
   </section>
 
   <hr class="rule">
@@ -208,7 +225,7 @@
         <div><h3>30% on every sale</h3>
           <div class="pct"><span class="n">30%</span>
             <span class="vs">vs <b>~9%</b><br>what brands in your showcase pay*</span></div>
-          <p style="font-size:13.5px;color:var(--mut)">*average across 94 active beauty affiliates, 30-day data</p></div></div>
+          <p class="fn">*average across 94 active beauty affiliates, 30-day data</p></div></div>
     </div>
   </section>
 
@@ -217,19 +234,23 @@
   <section>
     <p class="eyebrow">The brand</p>
     <h2>What Lemonderma is</h2>
-    <div class="duo"><img src="../assets/product-duo.jpg" alt="Lemonshot 150 Exo:Booster Serum and Lemon Exo:Booster Cream"></div>
-    <div class="facts">
-      <div class="fact"><span class="f-dot"></span><p><b>Vegan K-beauty dermocosmetic</b> — made by COSMAX,
-        the world's largest cosmetics manufacturer, with lemon-derived exosomes from a lab that supplies
-        dermatology clinics in 50+ countries.</p></div>
-      <div class="fact"><span class="f-dot"></span><p><b>Pharmacy-exclusive in Korea</b> — officially
-        registered for Brightening and Anti-Wrinkle care.</p></div>
-      <div class="fact"><span class="f-dot"></span><p><b>Amazon's Choice, twice</b> — both the serum and
-        the cream earned it within a month of the US launch.</p></div>
-    </div>
-    <div class="youget">
-      <p>🍋 <b>What we send you:</b> Lemonshot 150 Exo:Booster Serum + Lemon Exo:Booster Cream —
-        one of each, free.</p>
+    <div class="brand">
+      <div class="duo"><img src="../assets/product-duo.jpg" alt="Lemonshot 150 Exo:Booster Serum and Lemon Exo:Booster Cream"></div>
+      <div>
+        <div class="facts">
+          <div class="fact"><span class="f-dot"></span><p><b>Vegan K-beauty dermocosmetic</b> — made by COSMAX,
+            the world's largest cosmetics manufacturer, with lemon-derived exosomes from a lab that supplies
+            dermatology clinics in 50+ countries.</p></div>
+          <div class="fact"><span class="f-dot"></span><p><b>Pharmacy-exclusive in Korea</b> — officially
+            registered for Brightening and Anti-Wrinkle care.</p></div>
+          <div class="fact"><span class="f-dot"></span><p><b>Amazon's Choice, twice</b> — both the serum and
+            the cream earned it within a month of the US launch.</p></div>
+        </div>
+        <div class="youget">
+          <p>🍋 <b>What we send you:</b> Lemonshot 150 Exo:Booster Serum + Lemon Exo:Booster Cream —
+            one of each, free.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -238,19 +259,21 @@
   <section>
     <p class="eyebrow">How it works</p>
     <h2>Three steps</h2>
-    <div class="step"><span class="s-n">1</span>
-      <div><h3>Reply and say you're in</h3>
-      <p>We'll send the content guide and your TikTok Shop affiliate invite, then follow up directly.</p></div>
-    </div>
-    <div class="step"><span class="s-n">2</span>
-      <div><h3>Accept the invite in TikTok Shop</h3>
-      <p>Ships automatically through our fulfillment partner — no forms, no address to type.</p></div>
-    </div>
-    <div class="step"><span class="s-n">3</span>
-      <div><h3>Post within a week, yellow basket on</h3>
-      <p>Use her footage if you want a proven opener —
-        <a href="../pony/" target="_blank" rel="noopener">hook examples here</a>. We put ad budget
-        behind it, and every sale pays you 30%.</p></div>
+    <div class="steps">
+      <div class="step"><span class="s-n">1</span>
+        <div><h3>Reply and say you're in</h3>
+        <p>We'll send the content guide and your TikTok Shop affiliate invite, then follow up directly.</p></div>
+      </div>
+      <div class="step"><span class="s-n">2</span>
+        <div><h3>Accept the invite in TikTok Shop</h3>
+        <p>Ships automatically through our fulfillment partner — no forms, no address to type.</p></div>
+      </div>
+      <div class="step"><span class="s-n">3</span>
+        <div><h3>Post within a week, yellow basket on</h3>
+        <p>Use her footage if you want a proven opener —
+          <a href="../pony/" target="_blank" rel="noopener">hook examples here</a>. We put ad budget
+          behind it, and every sale pays you 30%.</p></div>
+      </div>
     </div>
     <div class="promo">⏳ <b>Buy 2 Get 1 runs through September</b> — your audience already has a reason
       to buy now.</div>
@@ -262,11 +285,12 @@
       <p>Just reply and say so. We'll send the content guide and your <b>TikTok Shop</b> invite —
         accept it and it ships automatically.</p>
       <span class="cta-pill">Reply "I'm in" → invite + guide follow</span>
-      <p style="margin-top:14px;font-size:14.5px;color:var(--mut)">Questions first? Reply with those — a person reads every email.</p>
+      <p class="sub">Questions first? Reply with those — a person reads every email.</p>
     </div>
   </section>
 
-  <footer>Lemonderma · <a href="https://www.lemonderma.co" target="_blank" rel="noopener">lemonderma.co</a> · Seoul, Korea</footer>
+  <footer>Lemonderma · <a href="https://www.lemonderma.co" target="_blank" rel="noopener">lemonderma.co</a> · Seoul, Korea
+    <span class="ver">v3.1 · updated Sep 2</span></footer>
 </div>
 
 </body>
