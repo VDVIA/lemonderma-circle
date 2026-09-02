@@ -106,6 +106,17 @@
      display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
   @media(min-width:900px){.g{grid-template-columns:1fr;gap:10px;align-content:start}}
   .g.big{border-color:var(--lemon-d);border-width:2px;background:var(--cream)}
+  /* 써클 티저 — 3열을 가로지르는 띠. 표가 아니라 '문이 열린다'는 암시 한 덩어리 */
+  .door{grid-column:1/-1;border:1px dashed var(--lemon-d);border-radius:16px;background:var(--card);
+        padding:20px 22px;display:grid;gap:6px 18px;grid-template-columns:1fr;align-items:start}
+  @media(min-width:900px){.door{grid-template-columns:auto 1fr;align-items:center;padding:22px 26px}}
+  .door .lv{font-family:"EB Garamond",Georgia,serif;font-size:clamp(30px,3vw,40px);line-height:1;color:var(--olive);
+            white-space:nowrap}
+  .door .lv small{display:block;font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.12em;
+                  text-transform:uppercase;color:var(--mut);margin-bottom:6px}
+  .door h3{margin-bottom:4px}
+  .door p{margin:0;font-size:17px}
+  .door b{color:var(--ink)}
   .g-ic{font-size:28px;line-height:1.1;padding-top:2px}
   .g h3{margin-bottom:4px}
   .g p{margin:0;font-size:17px}
@@ -226,6 +237,13 @@
           <div class="pct"><span class="n">30%</span>
             <span class="vs">vs <b>~9%</b><br>what brands in your showcase pay*</span></div>
           <p class="fn">*average across 94 active beauty affiliates, 30-day data</p></div></div>
+      <div class="door">
+        <div class="lv"><small>After this collab</small>Level 2</div>
+        <div><h3>This one opens the door to the Circle.</h3>
+          <p>Finish this first collab and you enter the <b>Lemonderma Circle at Level 2</b> — skipping
+            the entry level. Higher levels unlock an invitation to our Seoul HQ, global event invites,
+            paid ad campaigns bundled around your posts, and more.</p></div>
+      </div>
     </div>
   </section>
 
@@ -290,7 +308,7 @@
   </section>
 
   <footer>Lemonderma · <a href="https://www.lemonderma.co" target="_blank" rel="noopener">lemonderma.co</a> · Seoul, Korea
-    <span class="ver">v3.1 · updated Sep 2</span></footer>
+    <span class="ver">v3.2 · updated Sep 2</span></footer>
 </div>
 
 </body>
